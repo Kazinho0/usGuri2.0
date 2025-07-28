@@ -6,8 +6,8 @@ Este projeto é um servidor web simples feito com Node.js e Express, que serve u
 
 ## Requisitos
 
-- Node.js (versão 16 ou superior)
-- npm (gerenciador de pacotes do Node.js)
+- [Node.js](https://nodejs.org/pt) (versão 16 ou superior)
+- [npm](https://www.npmjs.com/) (gerenciador de pacotes do Node.js)
 
 ## Instalação dos pacotes
 
