@@ -12,6 +12,11 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'main.html'));
 });
 
+// Rota /home para servir o home.html
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'home.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
