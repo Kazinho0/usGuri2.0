@@ -34,13 +34,27 @@
         </style>
     <body>
         <div class="body2">
-            <h1>Login</h1>
-            <input type="email" placeholder="Digite seu e-mail" style="margin-bottom: 20px;" name="email"/>
-            <input type="password" placeholder="Digite sua senha" style="margin-bottom: 20px;" name="senha"/>
-            <button>Entrar</button>
+            <form id="loginForm" action="">
+                <h1>Login Macaco</h1>
+                <input type="text" id="username" placeholder="Digite seu nome de usuário"required Style="margin-bottom: 20px;"/>
+                <br>
+                <input type="password" id="password" placeholder="Digite sua senha" required Style="margin-bottom: 20px;" />
+                <br>
+                <button type="submit">Logar</button>
+            </form>
         </div>
     </body>
 </html>
 <script>
-    
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+     username = document.getElementById("username").value
+     password = document.getElementById("password").value
+     if (username === "macaco" && password === "1234") {
+         alert("Login bem-sucedido!");
+         window.location.href = "/home.html"; // Redireciona para a página home.html
+     } else {
+         alert("Usuário ou senha incorretos.");
+     }
+    });
 </script>

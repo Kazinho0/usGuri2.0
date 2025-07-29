@@ -5,6 +5,12 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 3000;
 
+const uri = 'mongodb+srv://Kazinho:kazinho3344@cluster0.xyftxx8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(uri)
+    .then(() => console.log('Conectado ao MongoDB'))
+    .catch(err => console.error('Erro ao conectar ao MongoDB', err));
+    
 // Servir arquivos estáticos da pasta atual (usGuri2.0)
 app.use(express.static(__dirname));
 
@@ -21,9 +27,3 @@ app.get('/home', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-const uri = 'mongodb+srv://Kazinho:kazinho3344@cluster0.xyftxx8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-
-mongoose.connect(uri)
-    .then(() => console.log('Conectado ao MongoDB'))
-    .catch(err => console.error('Erro ao conectar ao MongoDB', err));
