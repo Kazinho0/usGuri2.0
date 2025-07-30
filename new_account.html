@@ -30,6 +30,8 @@
                 justify-content: center;
                 padding: 20px;
                 flex-direction: column;
+                border-radius: 7px;
+                box-shadow: 20px 20px 20px rgba(0, 0, 0, 1);
             }
             .input {
                 display: block;
@@ -37,7 +39,7 @@
                 padding: 10px;
                 margin: 1px auto;
                 border: none;
-                border-radius: 5px;
+                border-radius: 7px;
             }
             form {
                 margin-top: 0;
@@ -46,7 +48,7 @@
     <body>
         <div class="body2">
             <h1 style="font-size: 250%; height: 100%; width: 28%; white-space: nowrap;">Novo Macaco</h1>
-            <form>
+            <form method="POST" action="/new_account">
                 <input type="text" name="username" placeholder="Nome de Usuário" required class="input">
                 <br>
                 <input type="email" name="email" placeholder="Email" required class="input">
@@ -58,3 +60,4 @@
             </form>
         </div>
     </body>
+</html>

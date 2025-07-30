@@ -29,6 +29,44 @@ app.get('/new_account', (req, res) => {
     res.sendFile(path.join(__dirname, 'new_account.html'));
 });
 
+// Schema do usuário
+const userSchema = new mongoose.Schema({
+    username: { type: String, required: true },
+    email: { type: String, required: true },
+    password: { type: String, required: true }
+});
+const User = mongoose.model('User', userSchema);
+
+// Middleware para processar dados do formulário
+app.use(express.urlencoded({ extended: true }));
+
+// Rota para criar novo usuário
+app.post('/new_account', async (req, res) => {
+    try {
+        const { username, email, password } = req.body;
+        const newUser = new User({ username, email, password });
+        await newUser.save();
+        res.redirect('/home');
+    } catch (err) {
+        res.status(500).send('Erro ao criar usuário: ' + err.message);
+    }
+});
+
+// Rota para login
+app.post('/login', async (req, res) => {
+    const { username, password } = req.body;
+    try {
+        const user = await User.findOne({ username, password });
+        if (user) {
+            res.redirect('/home');
+        } else {
+            res.redirect('/');
+        }
+    } catch (err) {
+        res.status(500).send('Erro ao fazer login: ' + err.message);
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
