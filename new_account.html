@@ -37,37 +37,24 @@
                 padding: 10px;
                 margin: 1px auto;
                 border: none;
-                border-radius: 7px;
+                border-radius: 5px;
             }
             form {
                 margin-top: 0;
-                transform: translateZ(80px);
             }
         </style>
     <body>
         <div class="body2">
-            <h1 style="transform: translateY(0px); font-size: 250%; height: 100%; width: 30%; white-space: nowrap;">Login Macaco</h1>
-            <form id="loginForm" action="" style="height: 200%;">
-                <input type="text" id="username" placeholder="Digite seu nome de usuário"required class="input"/>
+            <h1 style="font-size: 250%; height: 100%; width: 28%; white-space: nowrap;">Novo Macaco</h1>
+            <form>
+                <input type="text" name="username" placeholder="Nome de Usuário" required class="input">
                 <br>
-                <input type="password" id="password" placeholder="Digite sua senha" required class="input"/>
+                <input type="email" name="email" placeholder="Email" required class="input">
                 <br>
-                <button type="submit" style="height: 5vh; margin-left: 42%; border-radius: 7px;">Logar</button>
-                <p>Não tem uma conta? <a href="/new_account.html">Crie uma</a></p>
+                <input type="password" name="password" placeholder="Senha" required class="input">
+                <br>
+                <button type="submit" style="height: 5vh; width: 50%; margin-left: 29%; border-radius: 7px;">Criar Conta</button>
+                <p>Já tem uma conta? <a href="/">Faça login</a></p>
             </form>
         </div>
     </body>
-</html>
-<script>
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-     username = document.getElementById("username").value
-     password = document.getElementById("password").value
-     if (username === "macaco" && password === "1234") {
-         alert("Login bem-sucedido!");
-         window.location.href = "/home.html"; // Redireciona para a página home.html
-     } else {
-         alert("Usuário ou senha incorretos.");
-     }
-    });
-</script>

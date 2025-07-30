@@ -25,7 +25,7 @@ Execute o seguinte comando na pasta do projeto:
 node server.js
 ```
 
-O servidor estará disponível em [http://localhost:3000/login](http://localhost:3000/login).
+O servidor estará disponível em [http://localhost:3000/](http://localhost:3000/).
 
 ---
 Colabore, teste e desenvolva

@@ -24,6 +24,11 @@ app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'home.html'));
 });
 
+// Rota /new_account para servir o new_account.html
+app.get('/new_account', (req, res) => {
+    res.sendFile(path.join(__dirname, 'new_account.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
