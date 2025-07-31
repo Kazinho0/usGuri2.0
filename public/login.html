@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Macaco</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+    <main class="login-container">
+        <h1>Login Macaco</h1>
+
+        <form method="POST" action="/login" id="loginForm">
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Digite seu nome de usuário" required class="form-input">
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Digite sua senha" required class="form-input">
+            </div>
+
+            <button type="submit" class="btn-submit">Logar</button>
+        </form>
+
+        <p class="signup-link">
+            Não tem uma conta? <a href="/new_account">Crie uma</a>
+        </p>
+    </main>
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
