@@ -45,8 +45,13 @@ app.post('/new_account', async (req, res) => {
     try {
         const { username, email, password } = req.body;
         const newUser = new User({ username, email, password });
-        await newUser.save();
-        res.redirect('/home');
+        const userExists = await User.findOne({ username, email });
+        if (userExists) {
+            return res.status(400).send('Usuário já existe');
+        } else {
+            await newUser.save();
+            res.redirect('/home');
+        }
     } catch (err) {
         res.status(500).send('Erro ao criar usuário: ' + err.message);
     }
